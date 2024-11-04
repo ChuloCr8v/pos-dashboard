@@ -1,20 +1,21 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { Route, BrowserRouter as Router, Routes } from 'react-router-dom'
 import Layout from './components/shared/Layout'
-import Register from './pages/Register'
 import Dashboard from './pages/Dashboard'
-import Products from './pages/Products'
+import { ConfigProvider } from 'antd'
+import AllDevices from './pages/AllDevices'
 
 function App() {
     return (
-        <Router>
-            <Routes>
-                <Route path="/" element={<Layout />}>
-                    <Route index element={<Dashboard />} />
-                    <Route path="products" element={<Products />} />
-                </Route>
-                <Route path="/register" element={<Register />} />
-            </Routes>
-        </Router>
+        <ConfigProvider theme={{ token: { colorPrimary: '#0a96cc' } }}>
+            <Router>
+                <Routes>
+                    <Route path="/" element={<Layout />}>
+                        <Route index element={<Dashboard />} />
+                        <Route path="devices" element={<AllDevices />} />
+                    </Route>
+                </Routes>
+            </Router>
+        </ConfigProvider>
     )
 }
 
