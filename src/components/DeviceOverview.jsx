@@ -54,13 +54,21 @@ const DeviceOverview = (props) => {
     ]
 
     return (
-        <div className="grid grid-cols-2 gap-y-4">
-            {data.map((item) => (
-                <div className="space-y-1" key={item.label}>
-                    <p className="font-semibold uppercase text-gray-400 text-xs">{item.label}</p>
-                    <p className="capitalize text-500">{item.value}</p>
+        <div className="">
+            {(props.data.networkStatus?.toLowerCase() === 'disconnected' ||
+                props.data.cardReaderStatus?.toLowerCase() === 'faulty') && (
+                <div className="border border-red-600 bg-red-100 rounded-md px-4 leading-none pb-1.5 mb-4 py-1 text-center w-fit text-red-600">
+                    NOTE. {props.data?.deviceName} is currently out of service!
                 </div>
-            ))}
+            )}
+            <div className="grid grid-cols-2 gap-y-4">
+                {data.map((item) => (
+                    <div className="space-y-1" key={item.label}>
+                        <p className="font-semibold uppercase text-gray-400 text-xs">{item.label}</p>
+                        <p className="capitalize text-500">{item.value}</p>
+                    </div>
+                ))}
+            </div>
         </div>
     )
 }

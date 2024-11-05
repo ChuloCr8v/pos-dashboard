@@ -1,5 +1,5 @@
 import React from 'react'
-import { IoList, IoCheckmarkCircleOutline } from 'react-icons/io5'
+import { IoList, IoCheckmarkCircleOutline, IoCloseCircleOutline } from 'react-icons/io5'
 
 export default function DashboardStatsGrid() {
     return (
@@ -30,7 +30,7 @@ export default function DashboardStatsGrid() {
 
             <BoxWrapper>
                 <div className="rounded-full h-9 w-9 p-1 flex items-center justify-center bg-red-600 bg-opacity-20">
-                    <IoCheckmarkCircleOutline className="text-red-600 text-2xl" />
+                    <IoCloseCircleOutline className="text-red-600 text-2xl" />
                 </div>
                 <div className="pl-4">
                     <span className="text-sm text-gray-500 font-light leading-none">Inactive Devices</span>

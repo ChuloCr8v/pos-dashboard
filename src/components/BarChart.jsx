@@ -3,65 +3,65 @@ import { BarChart as Chart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, R
 const data = [
     {
         name: 'Lagos',
-        battery: Math.floor(Math.random() * 100) + 1,
-        ram: Math.floor(Math.random() * 100) + 1
+        CPU: Math.floor(Math.random() * 40) + 1,
+        RAM: Math.floor(Math.random() * 40) + 1
     },
     {
         name: 'Abuja',
-        battery: Math.floor(Math.random() * 100) + 1,
-        ram: Math.floor(Math.random() * 100) + 1
+        CPU: Math.floor(Math.random() * 40) + 1,
+        RAM: Math.floor(Math.random() * 40) + 1
     },
     {
         name: 'Kano',
-        battery: Math.floor(Math.random() * 100) + 1,
-        ram: Math.floor(Math.random() * 100) + 1
+        CPU: Math.floor(Math.random() * 40) + 1,
+        RAM: Math.floor(Math.random() * 40) + 1
     },
     {
         name: 'Port Harcourt',
-        battery: Math.floor(Math.random() * 100) + 1,
-        ram: Math.floor(Math.random() * 100) + 1
+        CPU: Math.floor(Math.random() * 40) + 1,
+        RAM: Math.floor(Math.random() * 40) + 1
     },
     {
         name: 'Enugu',
-        battery: Math.floor(Math.random() * 100) + 1,
-        ram: Math.floor(Math.random() * 100) + 1
+        CPU: Math.floor(Math.random() * 40) + 1,
+        RAM: Math.floor(Math.random() * 40) + 1
     },
     {
         name: 'Kaduna',
-        battery: Math.floor(Math.random() * 100) + 1,
-        ram: Math.floor(Math.random() * 100) + 1
+        CPU: Math.floor(Math.random() * 40) + 1,
+        RAM: Math.floor(Math.random() * 40) + 1
     },
     {
         name: 'Ibadan',
-        battery: Math.floor(Math.random() * 100) + 1,
-        ram: Math.floor(Math.random() * 100) + 1
+        CPU: Math.floor(Math.random() * 40) + 1,
+        RAM: Math.floor(Math.random() * 40) + 1
     },
     {
         name: 'Benin City',
-        battery: Math.floor(Math.random() * 100) + 1,
-        ram: Math.floor(Math.random() * 100) + 1
+        CPU: Math.floor(Math.random() * 40) + 1,
+        RAM: Math.floor(Math.random() * 40) + 1
     },
     {
         name: 'Jos',
-        battery: Math.floor(Math.random() * 100) + 1,
-        ram: Math.floor(Math.random() * 100) + 1
+        CPU: Math.floor(Math.random() * 40) + 1,
+        RAM: Math.floor(Math.random() * 40) + 1
     },
     {
         name: 'Calabar',
-        battery: Math.floor(Math.random() * 100) + 1,
-        ram: Math.floor(Math.random() * 100) + 1
+        CPU: Math.floor(Math.random() * 40) + 1,
+        RAM: Math.floor(Math.random() * 40) + 1
     },
     {
         name: 'Uyo',
-        battery: Math.floor(Math.random() * 100) + 1,
-        ram: Math.floor(Math.random() * 100) + 1
+        CPU: Math.floor(Math.random() * 40) + 1,
+        RAM: Math.floor(Math.random() * 40) + 1
     }
 ]
 
 export default function BarChart() {
     return (
-        <div className="h-[22rem] bg-white p-4 rounded-sm border border-gray-200 flex flex-col flex-1">
-            <strong className="text-gray-700 font-medium">All Devices Statistics</strong>
+        <div className="h-[24rem] bg-white p-4 rounded-sm border border-gray-200 flex flex-col flex-1">
+            <strong className="text-gray-700 font-medium">All Devices Statistics (RAM/CPU)</strong>
             <div className="mt-3 w-full flex-1 text-xs">
                 <ResponsiveContainer width="100%" height="100%">
                     <Chart
@@ -77,11 +77,11 @@ export default function BarChart() {
                     >
                         <CartesianGrid strokeDasharray="3 3 0 0" vertical={false} />
                         <XAxis dataKey="name" />
-                        <YAxis />
+                        <YAxis domain={[0, 100]} />
                         <Tooltip />
                         <Legend />
-                        <Bar dataKey="battery" fill="#0ea5e9" />
-                        <Bar dataKey="ram" fill="#ea580c" />
+                        <Bar radius={[100, 100, 0, 0]} dataKey="CPU" fill="#0ea5e9" />
+                        <Bar radius={[100, 100, 0, 0]} dataKey="RAM" fill="#ea580c" />
                     </Chart>
                 </ResponsiveContainer>
             </div>

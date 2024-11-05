@@ -9,9 +9,13 @@ export default function Dashboard() {
         <div className="flex flex-col gap-4">
             <p className="text-2xl font-semibold capitalize">Dashboard</p>
             <DashboardStatsGrid />
-            <div className="flex flex-row gap-4 w-full">
-                <BarChart />
-                <PieChart />
+            <div className="grid grid-cols-8 w gap-4 w-full">
+                <div className="col-span-6">
+                    <BarChart />
+                </div>
+                <div className="col-span-2">
+                    <PieChart />
+                </div>
             </div>
             <div className="flex flex-row gap-4 w-full">
                 <BatteryLevelChart />
